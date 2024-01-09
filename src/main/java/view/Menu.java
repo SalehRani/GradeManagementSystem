@@ -53,5 +53,7 @@ public class Menu {
             displayMenuOptions(options);
             choice = getChoiceFromUserInput(options);
         }
+
+        return choice;
     }
 }
