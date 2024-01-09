@@ -68,16 +68,17 @@ public class CourseGradeSemesterCLI {
     }
 
     public void run() {
+        displayApplicationBanner();
         boolean running = true;
         while (running) {
             printHeading("Main Menu");
             String choice = (String)menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
             switch (choice) {
                 case MAIN_MENU_OPTION_CG:
-                    handleCourseGrades();
+                    //handleCourseGrades();
                     break;
                 case MAIN_MENU_OPTION_SEMESTERS:
-                    handleSemesters();
+                    //handleSemesters();
                     break;
                 case MAIN_MENU_OPTION_EXIT:
                     running = false;
@@ -90,14 +91,33 @@ public class CourseGradeSemesterCLI {
         System.out.println(("\n" + headingText));
 
         for (int i = 0; i < headingText.length(); i++) {
-            System.out.println("-");
+            System.out.print("-");
         }
 
         System.out.println();
     }
 
     private String getUserInput(String prompt) {
-        System.out.println(prompt + ">>> ");
+        System.out.print(prompt + ">>> ");
         return new Scanner(System.in).nextLine();
+    }
+
+    private void displayError(String message) {
+        System.out.println();
+        System.out.print("***" + message + "***");
+    }
+
+    private void displayApplicationBanner() {
+        System.out.println(" .----------------.  .----------------.  .----------------.  .----------------. ");
+        System.out.println("| .--------------. || .--------------. || .--------------. || .--------------. |");
+        System.out.println("| |     ______   | || |    ______    | || |  ________    | || |   ______     | |");
+        System.out.println("| |   .' ___  |  | || |  .' ___  |   | || | |_   ___ `.  | || |  |_   _ \\    | |");
+        System.out.println("| |  / .'   \\_|  | || | / .'   \\_|   | || |   | |   `. \\ | || |    | |_) |   | |");
+        System.out.println("| |  | |         | || | | |    ____  | || |   | |    | | | || |    |  __'.   | |");
+        System.out.println("| |  \\ `.___.'\\  | || | \\ `.___]  _| | || |  _| |___.' / | || |   _| |__) |  | |");
+        System.out.println("| |   `._____.'  | || |  `._____.'   | || | |________.'  | || |  |_______/   | |");
+        System.out.println("| |              | || |              | || |              | || |              | |");
+        System.out.println("| '--------------' || '--------------' || '--------------' || '--------------' |");
+        System.out.println(" '----------------'  '----------------'  '----------------'  '----------------' ");
     }
 }
